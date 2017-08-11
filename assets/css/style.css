@@ -2,3 +2,7 @@ h1{
 	font-family: 'Faster One', cursive !important;
 	font-size: 100px !important
 }
+#map{
+	height: 400px;
+	width: 100%;
+}
