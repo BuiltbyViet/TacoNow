@@ -1,5 +1,6 @@
 var map;
 var infowindow;
+var searchBox;
 
 function initMap() {
   var ucIrvine = {lat: 33.6405, lng: -117.8443};
@@ -14,7 +15,8 @@ function initMap() {
   service.nearbySearch({
     location: ucIrvine,
     radius: 1000,
-    type: ['restaurant']
+    type: 'restaurant',
+    keyword: 'taco'
   }, callback);
 }
 
@@ -40,7 +42,18 @@ function createMarker(place) {
 }
 
 // ___________________New Search Feature: Andrew________________________
+$(document).ready(function() {
+var input = document.getElementById('pac-input');
+input.value = "tacos";
+setTimeout(function() {
+       google.maps.event.trigger(input, 'focus')
+        google.maps.event.trigger(input, 'keydown', {
+            keyCode: 13
+        });
 
+}, 500);
+
+})
 function initAutocomplete() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 33.6405, lng: -117.8443},
@@ -50,8 +63,9 @@ function initAutocomplete() {
 
   // Create the search box and link it to the UI element.
   var input = document.getElementById('pac-input');
-  var searchBox = new google.maps.places.SearchBox(input);
+  searchBox = new google.maps.places.SearchBox(input);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  console.log(input)
 
   // Bias the SearchBox results towards current map's viewport.
   map.addListener('bounds_changed', function() {
@@ -63,6 +77,7 @@ function initAutocomplete() {
   // more details for that place.
   searchBox.addListener('places_changed', function() {
     var places = searchBox.getPlaces();
+    console.log(markers)
 
     if (places.length == 0) {
       return;
