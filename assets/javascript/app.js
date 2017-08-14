@@ -43,7 +43,7 @@ console.log(response);
           position: ucIrvine,
           map: map
         });
-      
+
 
   // Create the search box and link it to the UI element.
   var input = document.getElementById('pac-input');
@@ -107,6 +107,3 @@ console.log(response);
   });
 });
 };
-
-
-
