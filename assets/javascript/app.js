@@ -46,7 +46,7 @@ console.log(response);
           position: place.geometry.location
         });
         google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent(place.name +"<br>"+ "Rating: "+ place.rating);
+          infowindow.setContent(place.name +"<br>" + "Address: "+ place.formatted_address +"<br>"+ "Rating: "+ place.rating + "<br>" + "Open: "+ place.opening_hours.open_now + "<br>" + "Price Level: "+ place.price_level);
           infowindow.open(map, this);
           console.log(place);
         });
