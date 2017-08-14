@@ -1,6 +1,7 @@
 h1{
 	font-family: 'Faster One', cursive !important;
-	font-size: 100px !important
+	font-size: 100px !important;
+	text-align: center !important;
 }
 #map{
 	height: 400px;
