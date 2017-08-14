@@ -21,8 +21,8 @@ console.log(response);
           position: mapLocation,
           map: map
         });
-      
- 
+
+
       var infowindow;
         infowindow = new google.maps.InfoWindow();
         var service = new google.maps.places.PlacesService(map);
@@ -31,7 +31,7 @@ console.log(response);
           radius: 500,
           query: 'mexican'
         }, callback);
-      
+
       function callback(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           for (var i = 0; i < results.length; i++) {
@@ -46,8 +46,9 @@ console.log(response);
           position: place.geometry.location
         });
         google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent(place.name);
+          infowindow.setContent(place.name +"<br>"+ "Rating: "+ place.rating);
           infowindow.open(map, this);
+          console.log(place);
         });
       };
     });
