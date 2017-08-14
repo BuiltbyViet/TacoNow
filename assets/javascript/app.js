@@ -1,5 +1,13 @@
-// ___________________New Search Feature: Andrew________________________
+// ____________// ___________________New Search Feature: Andrew________________________
 $(document).ready(function() {
+
+
+
+});
+
+$("#submit-location").on("click", function(event){
+event.preventDefault();
+initAutocomplete();
 var input = document.getElementById('pac-input');
 input.value = "mexican";
 setTimeout(function() {
@@ -8,15 +16,34 @@ setTimeout(function() {
             keyCode: 13
         });
 
-}, 200);
+}, 1000);
+});
 
-})
+
 function initAutocomplete() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 33.6405, lng: -117.8443},
-    zoom: 13
+  var zipCode = $("#input-location").val();
+var queryURL =  "https://maps.googleapis.com/maps/api/geocode/json?components=postal_code:"+zipCode+"&key=AIzaSyDC5VjVV78MqkJggO81SnzhUxDyF1HUfGI";
 
-  });
+     console.log(zipCode) ;
+$.ajax({
+  url: queryURL,
+  method: "GET"
+})
+.done(function(response) {
+
+console.log(response);
+
+
+        var ucIrvine = {lat: response.results[0].geometry.location.lat, lng: response.results[0].geometry.location.lng};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: ucIrvine
+        });
+        var newMarker = new google.maps.Marker({
+          position: ucIrvine,
+          map: map
+        });
+      
 
   // Create the search box and link it to the UI element.
   var input = document.getElementById('pac-input');
@@ -78,40 +105,8 @@ function initAutocomplete() {
     });
     map.fitBounds(bounds);
   });
-}
-
-//=== viet's code
-
-$("#submit-location").on("click", function(event){
-event.preventDefault();
-initMap();
 });
-
-
-
-
-function initMap() {
-  var zipCode = $("#input-location").val();
-var queryURL =  "https://maps.googleapis.com/maps/api/geocode/json?components=postal_code:"+zipCode+"&key=AIzaSyDC5VjVV78MqkJggO81SnzhUxDyF1HUfGI";
-
-     console.log(zipCode) ;
-$.ajax({
-  url: queryURL,
-  method: "GET"
-})
-.done(function(response) {
-
-console.log(response);
-
-
-        var ucIrvine = {lat: response.results[0].geometry.location.lat, lng: response.results[0].geometry.location.lng};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 12,
-          center: ucIrvine
-        });
-        var marker = new google.maps.Marker({
-          position: ucIrvine,
-          map: map
-        });
-      });
 };
+
+
+
