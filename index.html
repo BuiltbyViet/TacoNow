@@ -31,7 +31,7 @@
 				</div>
 			</nav>
 			
-			<header>
+			<header id="header" class="page-header">
 				<div class="row">
 					<div class="col-md-2">
 						<img src="assets/images/tacologo.png">
@@ -43,23 +43,23 @@
 			</header>
 			<section>
 				<div class="row">
-					<div class="col-md-12">A taco location app built by taco enthusiasts for taco enthusiasts. TacoNow highlights local taco spots while providing information that helps users make quick, easy decisions. This is a one stop solution for taco-lovers to find their heaven.
+					<div class="col-md-12" id="description";" >A taco location app built by taco enthusiasts for taco enthusiasts. TacoNow highlights local taco spots while providing information that helps users make quick, easy decisions. This is a one stop solution for taco-lovers to find their heaven.
 					</div>
 				</div>
 				<br>
-				<div class="row">
-					<div class="col-md-6">
-						<form id="em-form">
-							<input type="text" id="input-location">
-							<input id="submit-location" type="submit" value="Zip Code Location Search">
+				<div  class="row">
+					<div  class="col-md-6">
+						<form  id="em-form">
+							<input type="text" id="input-location" placeholder="Enter location here" >
+							<input id="submit-location" type="submit" value=" Location Search">
 						</form>
 					</div>
 				</div>
 				<br>
 				<div class="row">
 					<div class="col-md-6 container-fluid">
-						<div class="panel panel-primary">
-							<div class="panel-heading">
+						<div id="mapDiv" class="panel panel-primary">
+							<div  class="panel-heading">
 								<h3 class="panel-title">Map</h3>
 							</div>
 							<input id="pac-input" class="controls" type="text" placeholder="Search Box" hidden>

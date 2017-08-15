@@ -1,12 +1,13 @@
 $("#submit-location").on("click", function(event) {
     event.preventDefault();
     initAutocomplete();
+    $("#mapDiv").animate({opacity:"1"});
 });
 
 function initAutocomplete() {
-    var zipCode = $("#input-location").val();
-    var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?components=postal_code:" + zipCode + "&key=AIzaSyDC5VjVV78MqkJggO81SnzhUxDyF1HUfGI";
-    console.log(zipCode);
+    var location = $("#input-location").val();
+    var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + location + "&key=AIzaSyDC5VjVV78MqkJggO81SnzhUxDyF1HUfGI";
+    console.log(location);
     $.ajax({
             url: queryURL,
             method: "GET"
@@ -18,7 +19,7 @@ function initAutocomplete() {
                 lng: response.results[0].geometry.location.lng
             };
             var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 12,
+                zoom: 13,
                 center: mapLocation
             });
             var newMarker = new google.maps.Marker({
@@ -70,8 +71,8 @@ function initAutocomplete() {
                     // -------Display Results-------
 
                     var resultsDiv = $('<div>');
-                    resultsDiv.attr('class', 'panel panel-primary')
-                    var p = $("<p>").html(place.name + "<br>" + "Address: " + place.formatted_address + "<br>" + "Rating: " + place.rating);
+                    resultsDiv.attr('class', 'panel panel-primary clickOptions')
+                    var p = $("<p>").html("<b>"+place.name+"</b>" + "<br>" + "Address: " + place.formatted_address + "<br>" + "Rating: " + place.rating);
                     resultsDiv.append(p);
                     $('#resultsView').append(resultsDiv);
                     

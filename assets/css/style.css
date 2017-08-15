@@ -24,3 +24,45 @@ h1{
     padding: 8px;
     text-align: center;
 }
+
+#header {
+	margin-left: 10%;
+	background-color: white;
+	text-align: center;
+	padding-left: 100px;
+	border: 2px solid red;
+	border-radius: 10px;
+	width: 900px;
+}
+
+#description{
+background-color: white;
+	border: 2px solid red;
+	border-radius: 10px;
+
+}
+
+#mapDiv {
+	opacity: 0.05;
+	margin-top: 50px;
+
+}
+
+#em-form{
+	position: absolute;
+background-color: white;
+	border: 2px solid red;
+	border-radius: 10px;
+	text-align: center;
+	margin-left: 69%;
+	width: 400px;
+
+}
+
+#resultsView{
+	margin-top: 50px;
+}
+
+.clickOptions {
+	border: 2px solid red!important
+}
