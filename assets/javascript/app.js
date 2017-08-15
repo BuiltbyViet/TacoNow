@@ -22,10 +22,6 @@ function initAutocomplete() {
                 zoom: 13,
                 center: mapLocation
             });
-            var newMarker = new google.maps.Marker({
-                position: mapLocation,
-                map: map
-            });
 
 
             var infowindow;
