@@ -64,7 +64,7 @@ function initAutocomplete() {
                     infowindow.open(map, this);
                     console.log(place);
 
-                    // -------Display Results-------
+                    // -------Display Results-----------------------
 
                     var resultsDiv = $('<div>');
                     resultsDiv.attr('class', 'panel panel-primary clickOptions')
@@ -72,8 +72,7 @@ function initAutocomplete() {
                     resultsDiv.append(p);
                     $('#resultsView').prepend(resultsDiv);
 
-
-                    // _____________________________
+                    // ______________________________________________
                 });
             };
         });
