@@ -43,7 +43,7 @@ background-color: white;
 }
 
 #mapDiv {
-	opacity: 0.05;
+	opacity: 0.001;
 	margin-top: 50px;
 
 }
