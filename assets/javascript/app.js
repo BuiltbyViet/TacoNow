@@ -39,10 +39,23 @@ console.log(response);
           }
         }
       }
+
+      // -------------Taco Icon---------------------------- 
+
+      var icon = {
+        url: "assets/images/tacomap.png",
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(25, 25)
+      };
+
+      // ---------------------------------------------------
       function createMarker(place) {
         var placeLoc = place.geometry.location;
         var marker = new google.maps.Marker({
           map: map,
+          icon: icon,
           position: place.geometry.location
         });
         google.maps.event.addListener(marker, 'click', function() {
