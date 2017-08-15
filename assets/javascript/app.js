@@ -45,7 +45,7 @@ function initAutocomplete() {
                 }
             }
 
-            // -------------Taco Icon---------------------------- 
+            // -------------Taco Icon----------------------------
 
             var icon = {
                 url: "assets/images/tacomap.png",
@@ -72,10 +72,10 @@ function initAutocomplete() {
 
                     var resultsDiv = $('<div>');
                     resultsDiv.attr('class', 'panel panel-primary clickOptions')
-                    var p = $("<p>").html("<b>"+place.name+"</b>" + "<br>" + "Address: " + place.formatted_address + "<br>" + "Rating: " + place.rating);
+                    var p = $("<p>").html("<b>"+place.name+"</b>" + "<br>" + "Address: " + place.formatted_address + "<br>" + "Rating: " + place.rating+ "/ 5");
                     resultsDiv.append(p);
-                    $('#resultsView').append(resultsDiv);
-                    
+                    $('#resultsView').prepend(resultsDiv);
+
 
                     // _____________________________
                 });
