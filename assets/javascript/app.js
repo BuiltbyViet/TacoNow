@@ -19,7 +19,7 @@ function initAutocomplete() {
                 lng: response.results[0].geometry.location.lng
             };
             var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 13,
+                zoom: 14,
                 center: mapLocation
             });
 
@@ -60,7 +60,7 @@ function initAutocomplete() {
                     position: place.geometry.location
                 });
                 google.maps.event.addListener(marker, 'click', function() {
-                    infowindow.setContent(place.name + "<br>" + "Address: " + place.formatted_address + "<br>" + "Rating: " + place.rating + "<br>" + "Open: " + place.opening_hours.open_now + "<br>" + "Price Level: " + place.price_level);
+                    infowindow.setContent(place.name + "<br>" + "Address: " + place.formatted_address + "<br>" + "Rating: " + place.rating + "<br>" + "Open: " + place.opening_hours.open_now);
                     infowindow.open(map, this);
                     console.log(place);
 
