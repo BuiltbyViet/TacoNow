@@ -67,9 +67,10 @@ function initAutocomplete() {
                     infowindow.open(map, this);
                     console.log(place);
 
-                    // -------Display Results-------Saving Option
+                    // -------Display Results-------
 
                     var resultsDiv = $('<div>');
+                    resultsDiv.attr('class', 'tacoResults')
                     var p = $("<p>").html(" - " + place.name + "<br>" + "Address: " + place.formatted_address + "<br>" + "Rating: " + place.rating);
                     resultsDiv.append(p);
                     $('#resultsView').append(resultsDiv);
