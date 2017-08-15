@@ -70,8 +70,8 @@ function initAutocomplete() {
                     // -------Display Results-------
 
                     var resultsDiv = $('<div>');
-                    resultsDiv.attr('class', 'tacoResults')
-                    var p = $("<p>").html(" - " + place.name + "<br>" + "Address: " + place.formatted_address + "<br>" + "Rating: " + place.rating);
+                    resultsDiv.attr('class', 'panel panel-primary')
+                    var p = $("<p>").html(place.name + "<br>" + "Address: " + place.formatted_address + "<br>" + "Rating: " + place.rating);
                     resultsDiv.append(p);
                     $('#resultsView').append(resultsDiv);
                     
