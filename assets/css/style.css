@@ -6,12 +6,26 @@ body{
 	background-size: cover;
 	font-family: 'Sedgwick Ave Display', cursive;
 }
+p{
+	background-color: rgba(255, 255, 255, .7);
+		border: 2px solid red;
+		border-radius: 10px;
+		font-family: 'Sedgwick Ave Display', cursive;
+		font-size: 20px;
+}
 
 h1{
 	font-family: 'Faster One', cursive !important;
 	font-size: 90px !important;
-	text-align: center !important;
 	display: inline;
+}
+h2{
+	background-color: rgba(255, 255, 255, .7);
+		border: 2px solid red;
+		border-radius: 10px;
+		font-family: 'Sedgwick Ave Display', cursive;
+		font-size: 20px;
+
 }
 
 #map{
@@ -55,10 +69,11 @@ background-color: rgba(255, 255, 255, .7);
 
 #em-form{
 	/*position: absolute;*/
-	text-align: center;
+	text-align: center !important;
 	/*margin-left: 69%;*/
 	/*width: 400px;*/
 }
+
 
 #resultsView{
 	margin-top: 50px;
